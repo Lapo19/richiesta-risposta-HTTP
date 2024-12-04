@@ -30,7 +30,7 @@ public class MioThread extends Thread{
                     if(line.equals("")){
                     String bodyRisposta ="<html><body>Pagina non trovata</body></html>";
                     out.writeBytes("HTTP/1.1 404 Not found \r\n");
-                    out.writeBytes("Content-Lenght: "+ bodyRisposta +"\r\n");
+                    out.writeBytes("Content-Lenght: "+ bodyRisposta.length() +"\r\n");
                     out.writeBytes("Content-Type: text/html \r\n");
                     out.writeBytes("\r\n");
                     out.writeBytes(bodyRisposta);
