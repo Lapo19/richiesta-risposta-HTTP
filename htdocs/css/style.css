@@ -1,0 +1,71 @@
+.centered
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.immagini
+{
+    position: relative;
+    text-align: center;
+    color: white;
+    opacity: 0.7;
+}
+
+.immagini:hover
+{
+    opacity: 1;
+}
+.immagini:hover p
+{
+    display: none;
+}
+.sfondo
+{
+    background-color: rgb(165, 163, 163);
+}
+.margine
+{
+    margin-left: 15%;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+.dimensione
+{
+    width: 95%;
+}
+@media only screen and (max-width: 1050px)
+{
+    .testo
+{
+    font-size: small;
+}
+
+}
+@media only screen and (max-width: 995px)
+{
+    .link
+{
+    font-size: medium;
+}
+
+}
+@media only screen and (max-width: 770px)
+{
+    .testo
+{
+    font-size: x-small;
+}
+
+}
+@media only screen and (max-width: 575px)
+{
+    .testo
+{
+    font-size: medium;
+}
+
+}
+
+

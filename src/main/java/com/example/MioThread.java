@@ -35,16 +35,13 @@ public class MioThread extends Thread{
                     out.writeBytes("\r\n");
                     out.writeBytes(bodyRisposta);
                     break;
-                }else{
+                    }else{
                     System.out.println(line);
-                }
+                    }
                 }
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
-
 }
