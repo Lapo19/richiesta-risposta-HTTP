@@ -33,12 +33,19 @@ public class main2 {
                 System.out.println(header);
             } while (!header.isEmpty());
 
-            if(risorsa.equals("/")){
-                risorsa= "/index.html";
-            }
-            File file = new File("htdocs"+risorsa); // prendo il file nella cartella htdocs
+            //System.out.println(risorsa);
             
-            if(file.exists()){
+            if(risorsa.endsWith("/")){
+                risorsa += "index.html";
+            } 
+            File file = new File("htdocs"+risorsa); // prendo il file nella cartella htdocs
+
+            if (file.isDirectory()) {
+                out.writeBytes("HTTP/1.1 301 Moved Permanent \r\n");
+                out.writeBytes("Content-Lenght: 0\r\n");
+                out.writeBytes("Location: "+risorsa+"/\r\n");
+                out.writeBytes("\r\n");
+            } else if(file.exists()){
                 //String msg = "Benvenuto nella <b>home</b>";
                 
                 out.writeBytes("HTTP/1.1 200 OK \r\n");
@@ -53,8 +60,7 @@ public class main2 {
                 while ((n=input.read(buf)) != -1) {
                     out.write(buf, 0, n);
                 }
-            }
-            else{
+            } else{
                 String msg = "File non trovato";
                 out.writeBytes("HTTP/1.1 404 Not found \r\n");
                 out.writeBytes("Content-Lenght: "+ msg.length() +"\r\n");
